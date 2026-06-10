@@ -36,6 +36,25 @@ export default function RPTab({ tabKey }) {
     setEditing(false)
   }
 
+  const loadAllTemplate = () => {
+    if (!pregen?.rp) return
+    if (
+      !window.confirm(
+        `Replace ALL four RP tabs (Tips, Phrases, Opportunities, Voice) with ${pregen.name}'s template content? Your current text on every RP tab will be overwritten.`,
+      )
+    ) {
+      return
+    }
+    updateActive((c) => {
+      const rpNext = { ...c.rp }
+      for (const [k, content] of Object.entries(pregen.rp)) {
+        if (rpNext[k]) rpNext[k] = { ...rpNext[k], format: 'markdown', content }
+      }
+      return { ...c, rp: rpNext }
+    })
+    setEditing(false)
+  }
+
   return (
     <div className="rp-tab">
       <div className="rp-toolbar">
@@ -44,8 +63,13 @@ export default function RPTab({ tabKey }) {
         </h2>
         <div className="spacer" />
         {templateContent && (
-          <button className="btn small ghost" onClick={loadTemplate} title={`Load ${pregen.name}'s prewritten content for this tab`}>
-            ⟳ Load {pregen.name}'s template
+          <button className="btn small ghost" onClick={loadTemplate} title={`Load ${pregen.name}'s prewritten content into this tab only`}>
+            ⟳ This tab
+          </button>
+        )}
+        {pregen?.rp && (
+          <button className="btn small ghost" onClick={loadAllTemplate} title={`Load ${pregen.name}'s prewritten content into all four RP tabs`}>
+            ⟳ Load all {pregen.name}'s RP
           </button>
         )}
         <div className="seg">
@@ -90,7 +114,12 @@ export default function RPTab({ tabKey }) {
               </button>
               {templateContent && (
                 <button className="btn ghost" onClick={loadTemplate}>
-                  ⟳ Load {pregen.name}'s template
+                  ⟳ Load this tab
+                </button>
+              )}
+              {pregen?.rp && (
+                <button className="btn ghost" onClick={loadAllTemplate}>
+                  ⟳ Load all {pregen.name}'s RP
                 </button>
               )}
             </div>
