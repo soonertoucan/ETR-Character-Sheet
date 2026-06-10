@@ -40,6 +40,70 @@ export const PREGENS = [
       'severe-5-6': { label: 'Arm Removed', penalty: 'May only use 1 item per turn' },
     },
     lastStand: { actionName: 'Forbidden Sorceries' },
+    rp: {
+      tips: `# Roleplaying Iryna
+
+**Who you are:** Old blood, old money, old grudges. A provincial aristocrat who became something far worse than a vampire — a huntress with taste. The nazis are vulgar little men trampling a world you consider yours, and you will not forgive the rudeness.
+
+**What drives you:**
+- Reclaim your dignity and your name
+- Punish the uncultured for what they've broken
+- Prove that breeding and cruelty are the same art
+- Never, ever appear to try too hard
+
+**How to play her:** Imperious, elegant, glacially calm. Treat carnage as a social occasion. Compliment your enemies before you ruin them. You are never impressed and never hurried.
+
+## Signature style
+- Mesmerise first, kill second. **Dark Glamour** turns a room before a shot is fired.
+- Take the high ground — literally. Your rifle loves an **elevated position**.
+- Let the bats do the indelicate work (**Night's Willing Servants**).
+- Save **Mantle of the Fell Beast** for when manners have truly failed.
+
+> "A lady always finishes what she starts. Usually with the sabre."`,
+
+      phrases: `# Words & Lines
+
+## In her register
+"How tiresome." · "You'll forgive me — actually, you won't." · "Charmed." · "Sit. Stay. Bleed." · "I have hunted better men than you for sport."
+
+## Example lines
+- "You came into my night, and you did not even dress for it."
+- "Do hold still. This is the only elegant thing you'll do today."
+- "I was killing your betters before your grandfather soiled his first uniform."
+- "Run, if you like. The bats do enjoy the exercise."
+
+> Spoken softly, over a fallen officer: "There. Wasn't that civilised?"`,
+
+      opportunities: `# Tools of a Refined Predator
+
+- **Dark Glamour** — freeze a crowd, charm a sentry, buy a moment of perfect quiet. Best amid **beautiful surroundings**.
+- **Night's Willing Servants** — a swarm of bats to scout, blind, harry or herd. Thrives around **old buildings**.
+- **Deadeye Shot** — from an **elevated position**, blunt a Threat's attack before it lands.
+- **Magic cavalry sabre** — answer a **charge!** with one of your own.
+- **Explosive runes** — set a **concealed** trap and let the rude men walk into it.
+- **Cigarettes from the pockets of hanged men** — a grim little ritual; mark them to regain 2 Blood when you need composure.
+
+## When manners fail
+- **Mantle of the Fell Beast** — drop the poise, become the monster: BRAWL and TERRIFY surge, everything else falls away. Use it to end an Objective, not to start a fight.
+
+> "Restraint is a courtesy. I extend it rarely."`,
+
+      voice: `# Speaking Like Iryna
+
+**Accent:** Old-world Continental aristocrat — clipped, precise, faintly archaic. Every word chosen, nothing wasted.
+
+**How she talks:**
+- **Slow and certain** — she never rushes; the world waits for her.
+- **Formal vocabulary** — "shall", "one does not", "how very droll".
+- **Velvet contempt** — insults delivered as compliments.
+- **Understatement** — the worse it gets, the calmer she sounds.
+
+**Cadence:** Measured, with deliberate pauses. She lets silence do half the threatening.
+
+**Attitude in every line:** Speak as someone who has already won and is merely waiting for the room to realise it.
+
+> "Do try to die gracefully. So few of you manage it."`,
+    },
   },
 
   {
@@ -76,6 +140,73 @@ export const PREGENS = [
       'severe-5-6': { label: 'Lost an Arm', penalty: 'May only use 1 item per turn' },
     },
     lastStand: { actionName: 'Rigged to Blow' },
+    rp: {
+      tips: `# Roleplaying Nicole
+
+**Who you are:** A Resistance fighter who lost everyone and kept the guns. Your cell is gone, your girl is gone, and the only thing that quiets the grief is the noise of something nazi coming apart. You're not here to survive the war — you're here to make it expensive.
+
+**What drives you:**
+- Avenge your cell and your dead lover
+- Blow up everything they built
+- Take as many with you as you can
+- Find a death worth the name
+
+**How to play her:** Furious, fast, blackly funny. You volunteer for the worst job in the room. You grieve by fighting and joke so you don't scream.
+
+## Signature style
+- More gun than plan — bring all of it.
+- **Sapper** + explosives shred Challenges; soften the hard targets first.
+- **Scavenger** keeps you firing — never stop to reload when you can roll for it.
+- **Blink** in, plant the charge, **Blink** out. Or don't bother leaving.
+
+> "Save the speeches. Light the fuse."`,
+
+      phrases: `# Words & Lines
+
+## Hers
+"Merde." · "On y va." · "For the cell." · "Bigger boom." · "Tch — amateurs." · "Allez, allez!"
+
+## Example lines
+- "You purged my people. Let me show you what we left behind."
+- "I've got grenades older than your courage."
+- "Cover? That's adorable. Watch."
+- "This one's for her. They're all for her."
+
+> Lighting a fuse off a borrowed cigarette: "Run if you want. I'm staying for the show."`,
+
+      opportunities: `# An Arsenal With a Grudge
+
+- **M3 submachine gun** — chew through cover; lethal when you're **flanking**.
+- **Cut-down Lee Enfield** — brutal in **close quarters**.
+- **Smoke grenades** — screen a **cover advance** for the whole squad.
+- **Firebombs** — turn a chokepoint into a **firetrap**.
+- **Panzerfaust** — for the **armoured target** nothing else can touch.
+- **Dynamite** — the answer to any **demolitions** Objective, and most arguments.
+
+## Tricks
+- **Sapper** — using explosives drops an Objective or Threat's Challenge by 1. Open the door for everyone.
+- **Scavenger** — roll to restore a spent weapon mid-fight; keep the storm going.
+- **Blink** — shadows in, shadows out; perfect for **infiltration** and impossible escapes.
+- **Rat Swarm / Pitch Black** — when you want the **filth** and the dark on your side.
+
+> "Every lock is a door. Every wall is a suggestion. Every nazi is a countdown."`,
+
+      voice: `# Speaking Like Nicole
+
+**Accent:** French — working-class Resistance, not café society. Quick, clipped, a little rough.
+
+**How she talks:**
+- **Short sentences** — orders, not conversations.
+- **French interjections** — "merde", "allez", "on y va", a "putain" under her breath.
+- **Gallows humour** — the darker the moment, the drier the joke.
+- **Grief just under the surface** — it leaks out when she goes quiet.
+
+**Cadence:** Fast and impatient, then suddenly still when she's aiming — or remembering.
+
+**Attitude in every line:** Speak like someone with nothing left to lose and one more bomb to plant.
+
+> "Talk later. We are not finished here."`,
+    },
   },
 
   {
@@ -243,6 +374,71 @@ export const PREGENS = [
       'severe-5-6': { label: 'Eviscerated', penalty: "Can't use + dice" },
     },
     lastStand: { actionName: 'Go Down Shooting' },
+    rp: {
+      tips: `# Roleplaying Chuck
+
+**Who you are:** The nicest fella you'll ever meet, who also eats people. A hard-luck cowpoke who buried his kin, loves honest work and cowboy pictures, and happens to need human liver to keep going. F.A.N.G. sprung you from jail; now you point the appetite at nazis and call it square.
+
+**What drives you:**
+- Be a good man despite the hunger
+- Honest work, done right
+- Protect the folks beside you
+- Aim the monster at people who've earned it
+
+**How to play him:** Warm, polite, unbothered. Apologise before and after the violence. Treat the apocalypse like a tough day's ranching. The contrast between his manners and his menu is the whole joke.
+
+## Signature style
+- **FIX 4** — Chuck fixes things. Take the engineering Objectives single-handed (**Elbow Grease**).
+- **Corpse Eater** turns bad rolls into Blood — lean into the mess.
+- **Acid Spit** and that **lashing tongue** make him weirder than he lets on.
+- The **cowboy hat** is one last save — burn it to shrug off going Down.
+
+> "Nothin' personal, partner. Well — little bit personal."`,
+
+      phrases: `# Words & Lines
+
+## His
+"Howdy." · "Much obliged." · "Well, shoot." · "Easy now." · "Ma'am. Sir." · "Reckon that'll do."
+
+## Example lines
+- "Didn't catch your name. Won't need it."
+- "My mama raised me right. Then she raised me hungry."
+- "Hold still — this is the polite version."
+- "I surely am sorry about your sheriff. And your deputy. And… most of your county."
+
+> Tipping his hat over a ruined patrol: "Obliged for the meal, gentlemen."`,
+
+      opportunities: `# Honest Work, Unusual Tools
+
+- **Betsy & Maria** (paired revolvers) — call your shot in a **duel** and take it.
+- **Tool belt** — **Jerry-rig** a fix for damn near anything; this is where FIX shines.
+- **Cowboy hat** — mark it to ignore an Injury or being Downed (you only get the one; the hat doesn't survive).
+- **Acid Spit** — melt locks, hinges and armour; nasty **vs metal**.
+- **Spider Scurry** — up the walls and across the **low ceilings** nobody's watching.
+- **Lashing Tongue** — a several-yard tongue to **restrain**, grab or trip.
+
+## Signature moves
+- **Elbow Grease** — roll up your sleeves and finish a FIX Objective single-handed, dropping it by 4.
+- **Corpse Eater / Corrosive Fluids** — turn your worst rolls and fresh wounds into Blood and damage. The hungrier it gets, the meaner you fight.
+
+> "Give me a wrench, a wall, and a minute. I'll make us a door."`,
+
+      voice: `# Speaking Like Chuck
+
+**Accent:** American Western drawl — slow, easy, friendly. A range-hand, not a gunslinger ham.
+
+**How he talks:**
+- **Folksy and polite** — "howdy", "much obliged", "reckon", "ma'am", "partner".
+- **Soft-spoken** even mid-fight; the calm makes the carnage worse.
+- **Apologetic** — he genuinely feels bad about the eating. A little.
+- **Drops g's** — "nothin'", "fixin'", "huntin'".
+
+**Cadence:** Unhurried, a touch weary, like a man telling a long story on a porch.
+
+**Attitude in every line:** Speak like the kindest man at the worst dinner party — who is also the main course's problem.
+
+> "No call to be rude about it. We're all just tryin' to get through the night."`,
+    },
   },
 
   {
@@ -277,6 +473,72 @@ export const PREGENS = [
       'severe-5-6': { label: 'Ruined Leg', penalty: '-1 to all stats' },
     },
     lastStand: { actionName: 'Unleash the Spirits' },
+    rp: {
+      tips: `# Roleplaying Astrid
+
+**Who you are:** A fighter pilot who fell into the frozen taiga and came back wearing a predator's soul. Ancient spirits answer to you now; the beast in your chest answers to nothing. You speak little and hunt well. (And when the magic won't do, there's the machine gun.)
+
+**What drives you:**
+- Feed the predator without losing yourself
+- Honour the spirits that saved — and claimed — you
+- Hunt the worst prey the world has to offer
+- Stay the hunter, never the hunted
+
+**How to play her:** Quiet, intense, elemental. You read a room like a forest — wind, scent, weakness. You don't threaten; you simply decide, and then it's done.
+
+## Signature style
+- **Apex Predator** and **Unnatural Endurance** are crushing SPECIALs — set them up and break the encounter open.
+- **Bloodhunt** by scent: find the fleeing, the hidden, the marked.
+- **Nightmare Regeneration** clears Injuries — the beast does not stay wounded.
+- Spirits for the subtle work; the machine gun for everything else.
+
+> "The forest sent me. You should not have run."`,
+
+      phrases: `# Words & Lines
+
+## Hers
+"I smell fear." · "The spirits are restless." · "Hold." · "Prey." · "It is already done." · "Quiet now."
+
+## Example lines
+- "I have hunted wolves, men, and worse things in the dark. You are not worse things."
+- "The taiga took my name and gave me teeth. Fair trade."
+- "Do not run. It wakes the other one."
+- "Spirits, attend. There is work."
+
+> Low, almost gentle, to a cornered enemy: "Be still. This is the kind part."`,
+
+      opportunities: `# The Hunter and Her Spirits
+
+- **Machine Gun** — punish **enemies in cover**; the loud answer.
+- **Greatspear** — set to **receive a charge** and let them impale themselves.
+- **Fragmentation Grenades** — devastating in **enclosed spaces**.
+- **Spirit Fetters** — bind and command, strongest among **animals** and wild things.
+
+## The predator's gifts
+- **Apex Predator** — SPECIAL: gut a Threat's rating by 3.
+- **Unnatural Endurance** — SPECIAL: shrug off the GM's Attack dice by 3.
+- **Bloodhunt** — track by scent; ideal when a **target is fleeing**.
+- **Spirit Storm / Tethered Phantom** — hurl the world like a poltergeist and choke an enemy's Challenge.
+- **Nightmare Regeneration** — clear a marked Injury; the hunt continues.
+
+> "Spirits open the door. The beast walks through it."`,
+
+      voice: `# Speaking Like Astrid
+
+**Accent:** Nordic / northern — cold, even, deliberate. Few words, each one weighed.
+
+**How she talks:**
+- **Sparse and blunt** — sentences trimmed to the bone.
+- **Predator imagery** — scent, wind, prey, the hunt, the forest.
+- **Two voices** — her own calm, and the beast's growl beneath it.
+- **No wasted emotion** — she states; she does not plead or boast.
+
+**Cadence:** Slow, low, certain. Long silences. She speaks the way snow falls.
+
+**Attitude in every line:** Speak like something old and patient that has already decided how this ends.
+
+> "Talk is wind. The hunt is real."`,
+    },
   },
 
   {
@@ -310,6 +572,75 @@ export const PREGENS = [
       'severe-5-6': { label: 'Eviscerated', penalty: "Can't use + dice" },
     },
     lastStand: { actionName: 'Final Form' },
+    rp: {
+      tips: `# Roleplaying Flint
+
+**Who you are:** Born in a cave, driven into the war. Half-bat, half-human, all nightmare — a monstrous hunter the nazis mistook for a story. You may be able to talk. You may just be shy. Either way, you let the claws and the dark do most of the conversing.
+
+**What drives you:**
+- Hunt. Feed. Protect the few you trust.
+- Repay the ones who drove you from your home
+- Belong somewhere — even a squad of monsters
+- Stay free, stay airborne, stay fed
+
+**How to play him:** Physical and primal. Lead with body language, not banter. Loom in the dark, drop from the ceiling, vanish before anyone's sure you were there. Let the table feel him before they see him.
+
+## Signature style
+- **BRAWL 4** — you are the close-up nightmare. Open with **ambush**.
+- **Ravenous** floods you with Blood in melee — get in close and stay there.
+- **Sense Heartbeat** sees prey through walls; **Wings** put you anywhere.
+- **Grappling hook** + flight = you own the **high storeys** and the rafters.
+
+> *(He does not answer. The lights go out instead.)*`,
+
+      phrases: `# Words & Lines
+
+Flint barely speaks — so most of his "lines" are sounds, gestures, and the rare broken word. Play them at the table as description as much as dialogue.
+
+## The vocabulary of a monster
+- A high, chittering **screech** (echolocating — or just enjoying himself)
+- A low **hiss** that means *back away*
+- A wet **click-click-click** from the dark before he strikes
+- A single rasped word when it truly matters: **"Mine."** · **"No."** · **"Run."**
+
+## Rare full sentences (use sparingly, for impact)
+- "…friend?" *(hopeful, to a squadmate)*
+- "Smell. Their. Fear." *(broken, delighted)*
+- "Cave. Mine. Gone." *(the closest he comes to grief)*
+
+> When words won't come, narrate the wings, the eyes, the silence. That's his voice.`,
+
+      opportunities: `# Claws, Wings, and the Dark
+
+- **Steel gouging claws** — the whole point; devastating on the **ambush**.
+- **Grappling hook** — reach and cross **three or more storeys**; own the vertical fight.
+- **Wings** — fly; dominate **aerial combat** and drop in from anywhere.
+- **Sense Heartbeat** — see living prey through **dense cover** and walls.
+- **Improvised Projectile** — hurl something large, heavy and **aerodynamic** across the room.
+- **Ooze Form** — pour through gaps when **it's in the walls!**
+
+## Apex moves
+- **Ravenous** — SPECIAL: gain 3 Blood whenever you're in melee. Stay in the thick of it.
+- **Hellish Screech / Bone Armour** — break a Threat's Challenge and turn your stray 1s into armour.
+
+> Hunt from above. Strike from the dark. Be gone before the screaming stops.`,
+
+      voice: `# Speaking Like Flint
+
+**"Accent":** Mostly none. Flint is barely verbal — his voice is sound and motion, not sentences.
+
+**How he communicates:**
+- **Screeches, hisses, clicks** — echolocation, warning, glee.
+- **Body language first** — looming, head-tilts, bared teeth, mantled wings.
+- **Broken fragments** — one or two rasped words, present tense, no grammar: "Mine." "Run." "Friend?"
+- **Long, unsettling silence** — let others fill it, then move.
+
+**Cadence (when he does speak):** Halting, rough, like a voice that doesn't get used much.
+
+**Attitude:** Play the gap between monster and shy creature — terrifying one beat, almost tender the next. Lead with description; save words for when silence isn't enough.
+
+> *(A screech from the rafters. Then nothing. Then closer.)*`,
+    },
   },
 ]
 
