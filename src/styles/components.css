@@ -533,6 +533,41 @@
   color: var(--paper-edge);
 }
 
+/* Segmented Preview/Edit toggle */
+.seg {
+  display: inline-flex;
+  border: 1px solid #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 0 #000;
+}
+.seg button {
+  background: linear-gradient(180deg, var(--rust), #3c2814);
+  color: var(--paper-edge);
+  border: none;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.seg button + button {
+  border-left: 1px solid #000;
+}
+.seg button.on {
+  background: linear-gradient(180deg, var(--blood-bright), var(--blood));
+  color: #fff;
+}
+
+.rp-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--ink-soft);
+}
+.rp-empty p {
+  font-family: var(--font-type);
+  margin-bottom: 1rem;
+}
+
 .rp-editor {
   width: 100%;
   font-family: var(--font-type);

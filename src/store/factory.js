@@ -151,6 +151,14 @@ export function characterFromTemplate(tpl, overrides = {}) {
     return t ? { ...slot, label: t.label || '', penalty: t.penalty || '' } : slot
   })
 
+  // Template RP content (plain markdown strings per tab) overrides the default placeholders.
+  const rp = { ...base.rp }
+  if (tpl.rp) {
+    for (const [k, content] of Object.entries(tpl.rp)) {
+      if (rp[k]) rp[k] = { format: 'markdown', content }
+    }
+  }
+
   return {
     ...base,
     name: tpl.name || base.name,
@@ -161,6 +169,7 @@ export function characterFromTemplate(tpl, overrides = {}) {
     abilities: abilities.length ? abilities : base.abilities,
     advances,
     injuries,
+    rp,
     lastStand: { ...base.lastStand, ...(tpl.lastStand || {}) },
     metaPregen: tpl.key || null,
     ...overrides,

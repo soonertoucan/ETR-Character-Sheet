@@ -3,17 +3,38 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { useStore } from '../store/StoreContext.jsx'
 import { RP_TAB_LABELS } from '../store/factory'
+import { getPregen } from '../data/pregens'
 
 export default function RPTab({ tabKey }) {
   const { activeCharacter, updateActive } = useStore()
   const rp = activeCharacter.rp?.[tabKey] || { format: 'markdown', content: '' }
-  const [editing, setEditing] = useState(false)
+  const hasContent = !!rp.content && rp.content.trim().length > 0
+  // Start in edit mode when the page is empty, so input is immediately obvious.
+  const [editing, setEditing] = useState(!hasContent)
+
+  // If this character was built from a pregen that ships RP content, offer to load it.
+  const pregen = activeCharacter.metaPregen ? getPregen(activeCharacter.metaPregen) : null
+  const templateContent = pregen?.rp?.[tabKey] || null
 
   const setContent = (content) =>
     updateActive((c) => ({
       ...c,
       rp: { ...c.rp, [tabKey]: { ...c.rp[tabKey], content } },
     }))
+
+  const loadTemplate = () => {
+    if (!templateContent) return
+    if (
+      hasContent &&
+      !window.confirm(
+        `Replace this ${RP_TAB_LABELS[tabKey]} page with ${pregen.name}'s template content? Your current text on this tab will be overwritten.`,
+      )
+    ) {
+      return
+    }
+    setContent(templateContent)
+    setEditing(false)
+  }
 
   return (
     <div className="rp-tab">
@@ -22,25 +43,26 @@ export default function RPTab({ tabKey }) {
           {RP_TAB_LABELS[tabKey]} — <span className="rp-char">{activeCharacter.name}</span>
         </h2>
         <div className="spacer" />
-        <button
-          className={`btn small ${editing ? 'ghost' : 'blood'}`}
-          onClick={() => setEditing(false)}
-        >
-          Preview
-        </button>
-        <button
-          className={`btn small ${editing ? 'blood' : 'ghost'}`}
-          onClick={() => setEditing(true)}
-        >
-          Edit
-        </button>
+        {templateContent && (
+          <button className="btn small ghost" onClick={loadTemplate} title={`Load ${pregen.name}'s prewritten content for this tab`}>
+            ⟳ Load {pregen.name}'s template
+          </button>
+        )}
+        <div className="seg">
+          <button className={editing ? '' : 'on'} onClick={() => setEditing(false)}>
+            👁 Preview
+          </button>
+          <button className={editing ? 'on' : ''} onClick={() => setEditing(true)}>
+            ✎ Edit
+          </button>
+        </div>
       </div>
 
       {editing && (
         <p className="hint rp-hint">
-          Write Markdown here, or generate rich content with an AI elsewhere and paste it in.
-          Supports headings, lists, tables, bold/italic, links, and images
-          (<code>![alt](url)</code>).
+          Type or paste Markdown below — it renders in Preview. You can generate rich content with
+          an AI elsewhere and paste it here. Supports headings, lists, tables, bold/italic, links,
+          and images (<code>![alt](url)</code>).
         </p>
       )}
 
@@ -50,14 +72,28 @@ export default function RPTab({ tabKey }) {
             className="rp-editor"
             value={rp.content}
             onChange={(e) => setContent(e.target.value)}
+            placeholder={`Write ${RP_TAB_LABELS[tabKey]} for ${activeCharacter.name} here…`}
             rows={24}
             spellCheck={false}
+            autoFocus
           />
-        ) : (
+        ) : hasContent ? (
           <div className="rp-rendered markdown-body">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {rp.content || '_Nothing here yet. Click **Edit** to add content._'}
-            </ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{rp.content}</ReactMarkdown>
+          </div>
+        ) : (
+          <div className="rp-empty">
+            <p>Nothing here yet.</p>
+            <div className="row" style={{ justifyContent: 'center' }}>
+              <button className="btn blood" onClick={() => setEditing(true)}>
+                ✎ Add content
+              </button>
+              {templateContent && (
+                <button className="btn ghost" onClick={loadTemplate}>
+                  ⟳ Load {pregen.name}'s template
+                </button>
+              )}
+            </div>
           </div>
         )}
       </div>

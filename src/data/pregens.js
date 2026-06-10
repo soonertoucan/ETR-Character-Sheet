@@ -110,6 +110,106 @@ export const PREGENS = [
       'severe-5-6': { label: 'Wards Compromised', penalty: "Can't spend Blood to use abilities" },
     },
     lastStand: { actionName: 'Undead Horde' },
+    rp: {
+      tips: `# Roleplaying Cosgrave
+
+**Who you are:** A charming, cocky, unflappable East End necromancer. You crack jokes in the face of horror and pretend you've got it all under control — you usually don't.
+
+**What drives you:**
+- Survive (you're already dead, but still)
+- Get rich, or richer
+- Outwit everyone in the room
+- Keep Mother Millicent quiet (impossible)
+
+**Your relationship with Millicent:** Equal parts love, fear, and resentment. She's your greatest asset and your most constant problem.
+
+**RP traits:** Cocky · Funny · Streetwise · Secretly insecure · Loyal to the team · Pragmatic · Hides real feelings behind humour.
+
+## Soul Jar commands (the basics)
+- **Uncork it.** Release the spirit.
+- **Give it a task.** Be brief and specific.
+- **Let it do the work.** Ghosts go where you can't.
+- **Call it back.** Seal it again when the job's done.
+- **Show some respect.** Or at least pretend to — they remember.
+
+## Soul Jar tips
+- Ghosts have personalities. Talk to them.
+- Some are helpful, some are company, some are complete bastards.
+- Keep your jars tight — spilled ghosts are a real inconvenience.
+- Label your jars. Trust us.
+- The more powerful the ghost, the more care it needs.
+- Aunt Millicent disapproves of mistakes.
+
+## Ghost etiquette & care
+- Be polite (mostly). Keep your promises. Don't let them rot.
+- A frightened ghost is a useless ghost.
+- Store jars somewhere cool and dark. Don't drop them, don't crack the seal, and **don't** anger Millicent.
+
+> **Remember:** A good commander uses every resource. A great commander uses the dead. Make them work for the living.`,
+
+      phrases: `# Words & Lines
+
+## Useful words & phrases
+"Bloody hell" · "Mate" · "Mental" · "We'll sort it" · "Fair enough" · "Cheers" · "Right then" · "What could possibly go wrong?"
+
+## Example lines
+- "Right then. Let's get the bonnet up and have a look."
+- "Don't worry, I've got a plan. Several, actually — one of 'em might even work."
+- "Could be worse. Give it a minute."
+- "'Ere, hold this. And don't let it bite you."
+
+## Banter with Millicent
+- **Confrontation —** *Cosgrave:* "Mate, you really thought that'd work?" · *Millicent:* "Coward. They always cower."
+- **Tactical —** *Millicent:* "Take the left passage, you fool." · *Cosgrave:* "Left it is. She's usually right. Don't tell her."
+- **Humour —** *Millicent:* "I believe the phrase you're looking for is 'catastrophic failure.'"
+
+> *Millicent, almost fondly:* "Just try not to die before I'm finished with you."`,
+
+      opportunities: `# Creative Ways to Use Bottled Ghosts
+
+- **Scout ahead** — send a ghost through walls, round corners, or into guarded areas to report back.
+- **Pass through walls** — slip a ghost through solid matter for keys, documents, or sabotage.
+- **Create distractions** — noises, flickering lights, cold spots to confuse the enemy.
+- **Possess corpses** — pair with *Danse Macabre* to let a ghost ride along for extra control.
+- **Interrogate the dead** — pull information from soldiers, victims, or the recently deceased.
+- **Deliver messages** — instructions, warnings, or taunts.
+- **Trigger traps** — send a ghost in first to spring warded magic safely.
+- **Haunt & demoralize** — fear, paranoia and unrest through enemy ranks over time.
+- **Power your magic** — burn spirits as fuel for rituals, illusions and necromantic effects.
+- **Favours & bargains** — free a ghost temporarily in exchange for a future service.
+
+## Mother Millicent's stolen soul jar
+- **Occult consultation** — ask about rituals, curses, hauntings and history.
+- **Tactical advice** — she sees what you miss: the room, the spirits, the enemy.
+- **Detect supernatural threats** — ghosts, traps, rituals, dark energies.
+- **Amplify your magic** — use her as a focus to strengthen spells.
+- **Ghost control & command** — she cows weaker spirits and pries out answers.
+- **Emergency override** — in a real crisis she can take over and act through you.
+
+## Collecting more ghosts
+- **Battlefields** — the dead are plentiful.
+- **Haunted places** — ruins, crypts, churches.
+- **Bargains** — offer freedom or revenge.
+- **Millicent's methods** — best not to ask.
+
+> *Millicent's warning:* "You treat these souls like coins in a pouch. Don't forget they were once people — with memories, loyalties and grievances. So am I."`,
+
+      voice: `# Speaking Like Cosgrave
+
+**Accent:** East London / cockney. Casual, quick, a little raspy — like he's seen it all and isn't impressed.
+
+**How he talks:**
+- **Drop your T's** — "bo'le" not "bottle", "wha'?" not "what".
+- **Drop your H's** — "'ello", "'ere", "'ouse", "'ave a look".
+- **Keep it casual** — clipped, conversational, never formal.
+- **Slight rasp, slight smirk** — always sounds like he's half-joking.
+
+**Cadence:** Easy and unhurried, even when everything's on fire. He narrates danger like it's mildly inconvenient.
+
+**Attitude in every line:** Talk like a man completely unbothered by supernatural horror who always has a plan. (He might be lying. He probably is.)
+
+> *Parting thought, M. Cosgrave:* "If you've read all this, you've already done something idiotic. I expect you to keep going."`,
+    },
   },
 
   {
