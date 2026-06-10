@@ -1,6 +1,6 @@
 // Central app store: localStorage-backed React context.
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react'
-import { blankCharacter } from './factory'
+import { blankCharacter, uid } from './factory'
 import { loadState, saveState } from './persistence'
 
 const StoreContext = createContext(null)
@@ -74,6 +74,23 @@ export function StoreProvider({ children }) {
         return { ...s, characters, activeCharacterId }
       })
 
+    // Import a single character object from a file, adding it to the roster (a "merge").
+    // Fills any fields missing from older exports, and avoids id collisions.
+    const importCharacter = (charObj) =>
+      setState((s) => {
+        const base = blankCharacter()
+        const collision = charObj?.id && s.characters.some((c) => c.id === charObj.id)
+        const id = !charObj?.id || collision ? uid() : charObj.id
+        const merged = {
+          ...base,
+          ...charObj,
+          id,
+          journal: Array.isArray(charObj?.journal) ? charObj.journal : [],
+          rp: charObj?.rp || base.rp,
+        }
+        return { ...s, characters: [...s.characters, merged], activeCharacterId: id }
+      })
+
     const replaceState = (newState) => setState(newState)
 
     return {
@@ -85,6 +102,7 @@ export function StoreProvider({ children }) {
       createCharacter,
       duplicateCharacter,
       deleteCharacter,
+      importCharacter,
       replaceState,
     }
   }, [state])

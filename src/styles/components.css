@@ -568,6 +568,147 @@
   margin-bottom: 1rem;
 }
 
+/* ============================================================
+   Notes tab
+   ============================================================ */
+
+.notes-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.notes-toolbar .spacer {
+  flex: 1;
+}
+.notes-search {
+  width: auto;
+  min-width: 12rem;
+  background: #1c1610;
+  color: var(--paper);
+  border: 1px solid var(--rust);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.6rem;
+}
+
+.tag-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0.6rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid #2a2018;
+  border-radius: var(--radius);
+}
+.tag-filter-label {
+  font-family: var(--font-type);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--paper-edge);
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+.tag-chip.filter {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.12s ease, box-shadow 0.12s ease;
+}
+.tag-chip.filter:hover {
+  opacity: 1;
+}
+.tag-chip.filter.active {
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--paper) inset;
+}
+.tag-count {
+  opacity: 0.7;
+  font-size: 0.64rem;
+}
+.tag-x {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0 0 0 0.1rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.tag-x:hover {
+  opacity: 1;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.note-card {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.note-card.pinned {
+  border-left: 4px solid var(--gold);
+}
+
+.note-head {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.note-title {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--ink-soft);
+}
+.icon-btn.on {
+  color: var(--gold);
+}
+
+.note-body {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.4;
+  min-height: 4.5rem;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+.tag-input {
+  width: 6rem;
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  background: rgba(255, 252, 244, 0.4);
+  border: 1px dashed var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+}
+
 .rp-editor {
   width: 100%;
   font-family: var(--font-type);

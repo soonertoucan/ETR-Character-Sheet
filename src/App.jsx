@@ -7,9 +7,11 @@ import LandingMenu from './components/LandingMenu.jsx'
 import CreationWizard from './components/wizard/CreationWizard.jsx'
 import SheetTab from './tabs/SheetTab.jsx'
 import RPTab from './tabs/RPTab.jsx'
+import NotesTab from './tabs/NotesTab.jsx'
 
 const TABS = [
   { key: 'sheet', label: 'Character Sheet' },
+  { key: 'notes', label: 'Notes' },
   ...RP_TABS.map((k) => ({ key: k, label: RP_TAB_LABELS[k] })),
 ]
 
@@ -84,6 +86,8 @@ export default function App() {
       <main className="content">
         {tab === 'sheet' ? (
           <SheetTab />
+        ) : tab === 'notes' ? (
+          <NotesTab key={activeCharacter.id} />
         ) : (
           <RPTab key={`${activeCharacter.id}-${tab}`} tabKey={tab} />
         )}

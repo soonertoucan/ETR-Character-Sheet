@@ -14,8 +14,13 @@ all data lives in the browser via `localStorage`, deployed as a static site to G
   `src/store/factory.js` (blank-character schema, constants). The single source of truth
   is `src/store/StoreContext.jsx` (`useStore()`); all reads/writes go through it.
 - **Active character:** `useStore().activeCharacter` + `updateActive(patchOrFn)`.
-- **Tabs:** `Character Sheet` + per-character RP tabs (Tips, Phrases, Opportunities, Voice).
-  RP content is editable Markdown stored on the character (`character.rp[tab]`).
+- **Tabs:** `Character Sheet`, `Notes`, and per-character RP tabs (Tips, Phrases, Opportunities,
+  Voice). RP content is editable Markdown stored on the character (`character.rp[tab]`). The Notes
+  tab stores tagged in-game notes in `character.journal` (array of `{id,title,body,tags[],pinned}`).
+- **Export/import** (`ExportImport.jsx`): "Export All" (full backup) and "Save Character" (single
+  character JSON). Import auto-detects: a single-character file is *added* to the roster
+  (`importCharacter`), a full backup *replaces* local data. Everything on the character object —
+  RP tabs and journal included — rides along automatically.
 - **Dice:** `src/lib/dice.js` (4–5 success, 6 critical) + `src/components/dice/` (shared
   `DiceProvider`/`useDice` so stat & Last-Stand buttons feed one result tray). Rolls also
   copy a Roll20 `/r Nd6` string to the clipboard — there is no live Roll20 integration

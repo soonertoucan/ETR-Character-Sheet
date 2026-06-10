@@ -73,6 +73,21 @@ export function blankAdvance() {
   return { id: uid(), unlocked: false, name: '', bloodCost: null, effect: '' }
 }
 
+// A single in-game note (journal entry). Tags are free-form strings used to group notes.
+export function blankNote(overrides = {}) {
+  const ts = nowISO()
+  return {
+    id: uid(),
+    title: '',
+    body: '',
+    tags: [],
+    pinned: false,
+    createdAt: ts,
+    updatedAt: ts,
+    ...overrides,
+  }
+}
+
 function defaultInjuries() {
   const out = []
   for (const row of INJURY_ROWS) {
@@ -115,6 +130,7 @@ export function blankCharacter(overrides = {}) {
     injuries: defaultInjuries(),
     lastStand: { actionName: '', catastrophicEffect: '' },
     rp: defaultRP(),
+    journal: [], // in-game notes (see the Notes tab)
     createdAt: ts,
     updatedAt: ts,
     ...overrides,

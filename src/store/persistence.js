@@ -32,6 +32,10 @@ function migrate(state) {
   if (!Array.isArray(state.characters)) state.characters = []
   if (!state.settings) state.settings = { theme: 'default' }
   if (!state.version) state.version = 1
+  // Backfill fields added after a character may have been first saved.
+  state.characters = state.characters.map((c) =>
+    Array.isArray(c.journal) ? c : { ...c, journal: [] },
+  )
   // activeCharacterId must point at an existing character, or be null when empty.
   if (state.characters.length === 0) {
     state.activeCharacterId = null
