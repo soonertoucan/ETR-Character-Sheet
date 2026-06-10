@@ -121,12 +121,58 @@ export function blankCharacter(overrides = {}) {
   }
 }
 
+// Build a full character from a pregen template (see src/data/pregens.js).
+// Assigns fresh ids and fills the fixed injury slots from the template's map.
+export function characterFromTemplate(tpl, overrides = {}) {
+  const base = blankCharacter()
+  const equipment = (tpl.equipment || []).map((e) => ({
+    ...blankEquipment(),
+    name: e.name || '',
+    tags: e.tags || '',
+    neverRunsOut: !!e.neverRunsOut,
+    uses: { total: e.neverRunsOut ? 0 : e.uses ?? 1, spent: 0 },
+  }))
+  const abilities = (tpl.abilities || []).map((a) => ({
+    ...blankAbility(),
+    name: a.name || '',
+    effect: a.effect || '',
+    isSpecial: !!a.isSpecial,
+    bloodCost: a.bloodCost ?? null,
+  }))
+  const advances = (tpl.advances || []).map((a) => ({
+    ...blankAdvance(),
+    unlocked: !!a.unlocked,
+    name: a.name || '',
+    effect: a.effect || '',
+    bloodCost: a.bloodCost ?? null,
+  }))
+  const injuries = base.injuries.map((slot) => {
+    const t = tpl.injuries?.[slot.id]
+    return t ? { ...slot, label: t.label || '', penalty: t.penalty || '' } : slot
+  })
+
+  return {
+    ...base,
+    name: tpl.name || base.name,
+    concept: tpl.concept || '',
+    notes: tpl.notes || '',
+    stats: { ...base.stats, ...(tpl.stats || {}) },
+    equipment: equipment.length ? equipment : base.equipment,
+    abilities: abilities.length ? abilities : base.abilities,
+    advances,
+    injuries,
+    lastStand: { ...base.lastStand, ...(tpl.lastStand || {}) },
+    metaPregen: tpl.key || null,
+    ...overrides,
+  }
+}
+
 export function blankAppState() {
-  const first = blankCharacter()
+  // Start empty: the landing menu is the front door (select existing or create new).
   return {
     version: 1,
-    activeCharacterId: first.id,
-    characters: [first],
+    activeCharacterId: null,
+    characters: [],
     settings: { theme: 'default' },
   }
 }

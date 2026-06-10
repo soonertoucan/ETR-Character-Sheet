@@ -1,6 +1,6 @@
 import { useStore } from '../store/StoreContext.jsx'
 
-export default function CharacterSwitcher() {
+export default function CharacterSwitcher({ onCreate }) {
   const {
     state,
     activeCharacter,
@@ -9,6 +9,8 @@ export default function CharacterSwitcher() {
     duplicateCharacter,
     deleteCharacter,
   } = useStore()
+
+  if (!activeCharacter) return null
 
   const handleDelete = () => {
     if (
@@ -33,7 +35,11 @@ export default function CharacterSwitcher() {
           </option>
         ))}
       </select>
-      <button className="btn small" onClick={() => addCharacter()} title="New character">
+      <button
+        className="btn small"
+        onClick={() => (onCreate ? onCreate() : addCharacter())}
+        title="New character"
+      >
         + New
       </button>
       <button

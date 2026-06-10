@@ -29,14 +29,15 @@ export function saveState(state) {
 // Hook for future schema changes. v1 is current.
 function migrate(state) {
   if (!state || typeof state !== 'object') return blankAppState()
-  if (!Array.isArray(state.characters) || state.characters.length === 0) {
-    return blankAppState()
-  }
-  if (!state.activeCharacterId) {
-    state.activeCharacterId = state.characters[0].id
-  }
+  if (!Array.isArray(state.characters)) state.characters = []
   if (!state.settings) state.settings = { theme: 'default' }
   if (!state.version) state.version = 1
+  // activeCharacterId must point at an existing character, or be null when empty.
+  if (state.characters.length === 0) {
+    state.activeCharacterId = null
+  } else if (!state.characters.some((c) => c.id === state.activeCharacterId)) {
+    state.activeCharacterId = state.characters[0].id
+  }
   return state
 }
 

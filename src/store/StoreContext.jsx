@@ -18,12 +18,13 @@ export function StoreProvider({ children }) {
 
   const api = useMemo(() => {
     const activeCharacter = () =>
-      state.characters.find((c) => c.id === state.activeCharacterId) || state.characters[0]
+      state.characters.find((c) => c.id === state.activeCharacterId) || null
 
     // Apply a partial update (or updater fn) to the active character.
     const updateActive = (patch) =>
       setState((s) => {
         const id = s.activeCharacterId
+        if (!id) return s
         return {
           ...s,
           characters: s.characters.map((c) => {
@@ -44,6 +45,14 @@ export function StoreProvider({ children }) {
         return { ...s, characters: [...s.characters, c], activeCharacterId: c.id }
       })
 
+    // Add an already-prepared character object (e.g. built by the creation wizard
+    // via blankCharacter/characterFromTemplate). Ensures it has an id and becomes active.
+    const createCharacter = (charObj) =>
+      setState((s) => {
+        const c = charObj?.id ? charObj : blankCharacter(charObj || {})
+        return { ...s, characters: [...s.characters, c], activeCharacterId: c.id }
+      })
+
     const duplicateCharacter = (id) =>
       setState((s) => {
         const src = s.characters.find((c) => c.id === id)
@@ -59,10 +68,9 @@ export function StoreProvider({ children }) {
 
     const deleteCharacter = (id) =>
       setState((s) => {
-        const remaining = s.characters.filter((c) => c.id !== id)
-        const characters = remaining.length ? remaining : [blankCharacter()]
+        const characters = s.characters.filter((c) => c.id !== id)
         const activeCharacterId =
-          s.activeCharacterId === id ? characters[0].id : s.activeCharacterId
+          s.activeCharacterId === id ? characters[0]?.id ?? null : s.activeCharacterId
         return { ...s, characters, activeCharacterId }
       })
 
@@ -74,6 +82,7 @@ export function StoreProvider({ children }) {
       updateActive,
       selectCharacter,
       addCharacter,
+      createCharacter,
       duplicateCharacter,
       deleteCharacter,
       replaceState,
