@@ -38,7 +38,7 @@ See `/docs`:
 
 ## Commands
 - `npm run dev` — local dev server (served from `/`).
-- `npm run build` — production build to `dist/` (base path `/Eat-the-Reich-Character-Sheet/`;
+- `npm run build` — production build to `dist/` (base path `/ETR-Character-Sheet/`;
   override with `VITE_BASE`).
 - `npm run preview` — preview the production build.
 - `npm run deploy` — build + publish `dist/` to the `gh-pages` branch.

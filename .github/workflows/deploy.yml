@@ -29,7 +29,7 @@ jobs:
         run: npm run build
         env:
           # Served from https://<user>.github.io/<repo>/ — keep in sync with the repo name.
-          VITE_BASE: /Eat-the-Reich-Character-Sheet/
+          VITE_BASE: /ETR-Character-Sheet/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

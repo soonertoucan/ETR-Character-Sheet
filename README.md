@@ -28,7 +28,7 @@ npm run dev        # http://localhost:5173
 
 ## Build & deploy (GitHub Pages)
 ```bash
-npm run build      # outputs to dist/ (base path /Eat-the-Reich-Character-Sheet/)
+npm run build      # outputs to dist/ (base path /ETR-Character-Sheet/)
 npm run deploy     # publishes dist/ to the gh-pages branch
 ```
 If you rename the repo, update the `base` in `vite.config.js` (or set `VITE_BASE=/your-repo/`).
