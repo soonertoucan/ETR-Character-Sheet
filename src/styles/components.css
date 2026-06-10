@@ -1,0 +1,602 @@
+/* ============================================================
+   Component styles
+   ============================================================ */
+
+/* ---------- Topbar widgets ---------- */
+
+.char-switcher,
+.export-import {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.char-switcher select {
+  width: auto;
+  min-width: 11rem;
+  max-width: 16rem;
+  background: #1c1610;
+  color: var(--paper);
+  border: 1px solid var(--rust);
+}
+
+.export-msg {
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  color: var(--gold);
+}
+
+/* ---------- Sheet layout ---------- */
+
+.sheet-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.sheet-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .sheet-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Identity ---------- */
+
+.identity-body {
+  display: flex;
+  gap: 1rem;
+}
+
+.portrait-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.portrait {
+  width: 140px;
+  height: 180px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #2a2018;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.6);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait.empty span {
+  color: var(--paper-edge);
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.portrait-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.identity-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ---------- Stats ---------- */
+
+.stat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1px dashed rgba(74, 61, 44, 0.4);
+}
+
+.stat-name {
+  font-family: var(--font-type);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+.stat-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.stat-controls input {
+  width: 3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.step {
+  background: #2a2018;
+  color: var(--paper);
+  border: 1px solid #000;
+  border-radius: 3px;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+.step:hover {
+  background: var(--rust);
+}
+
+.roll-stat {
+  min-width: 4.4rem;
+  justify-content: center;
+}
+
+/* ---------- Blood ---------- */
+
+.blood h2 {
+  justify-content: space-between;
+}
+
+.blood-count {
+  font-family: var(--font-type);
+  color: var(--blood);
+  font-size: 1.1rem;
+}
+
+.blood-cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.blood-drop {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  border: 2px solid var(--blood);
+  background: rgba(255, 252, 244, 0.5);
+  color: var(--ink-soft);
+  font-family: var(--font-type);
+  font-size: 0.8rem;
+}
+
+.blood-drop.zero {
+  border-style: dashed;
+}
+
+.blood-drop.filled {
+  background: radial-gradient(circle at 35% 30%, var(--blood-bright), var(--blood));
+  color: #fff;
+  border-color: #3a0a08;
+  box-shadow: 0 0 6px rgba(168, 32, 26, 0.6);
+}
+
+.blood-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Equipment ---------- */
+
+.equip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.equip-item {
+  border: 1px solid rgba(74, 61, 44, 0.45);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  background: rgba(255, 252, 244, 0.28);
+}
+
+.equip-main {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.equip-main input {
+  flex: 1;
+}
+
+.equip-uses {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.uses-boxes {
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.use-box {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1.5px solid var(--green-mark);
+  background: rgba(255, 252, 244, 0.6);
+  border-radius: 2px;
+  color: var(--blood);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.use-box.spent {
+  background: var(--green-mark);
+  color: #fff;
+}
+
+.uses-infinite {
+  font-family: var(--font-type);
+  color: var(--green-mark);
+  font-size: 0.85rem;
+}
+
+.inline-num,
+.inline-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-type);
+  font-size: 0.7rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.inline-num input {
+  width: 3rem;
+  text-align: center;
+}
+
+.loot {
+  margin-top: 0.8rem;
+}
+
+/* ---------- Abilities / Advances ---------- */
+
+.ability-list,
+.advance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.ability-item,
+.advance-item {
+  border: 1px solid rgba(74, 61, 44, 0.45);
+  border-left: 3px solid var(--blood);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  background: rgba(255, 252, 244, 0.28);
+}
+
+.advance-item.locked {
+  border-left-color: var(--ink-soft);
+  opacity: 0.85;
+}
+
+.advance-item.unlocked {
+  border-left-color: var(--gold);
+}
+
+.ability-head,
+.advance-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.ability-name,
+.advance-name {
+  flex: 1;
+  font-weight: 700;
+}
+
+/* ---------- Injuries ---------- */
+
+.injuries h2 {
+  justify-content: space-between;
+}
+
+.injury-count {
+  font-family: var(--font-type);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.injury-count.dead {
+  color: #fff;
+  background: var(--blood);
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+}
+
+.injury-grid {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  gap: 0.35rem;
+}
+
+.injury-cell {
+  border: 1px solid rgba(74, 61, 44, 0.4);
+  border-radius: 3px;
+  padding: 0.35rem;
+  background: rgba(255, 252, 244, 0.25);
+}
+
+.injury-cell.head,
+.injury-cell.rowhead {
+  background: transparent;
+  border: none;
+  font-family: var(--font-type);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.injury-cell.rowhead {
+  justify-content: flex-start;
+}
+
+.injury-cell.marked {
+  background: rgba(168, 32, 26, 0.16);
+  border-color: var(--blood);
+}
+
+.injury-check {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+}
+
+.injury-label {
+  flex: 1;
+  font-size: 0.85rem;
+  padding: 0.15rem 0.25rem;
+}
+
+.injury-penalty {
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+/* ---------- Last Stand ---------- */
+
+.laststand {
+  border: 1px solid var(--blood);
+  box-shadow: var(--shadow), inset 0 0 40px rgba(124, 22, 18, 0.18);
+}
+
+.laststand .btn {
+  margin-top: 0.6rem;
+}
+
+/* ---------- Dice ---------- */
+
+.dice-panel h3 {
+  color: var(--ink);
+}
+
+.dice-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.dice-manual {
+  margin-bottom: 0.6rem;
+}
+
+.dice-copied {
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  color: var(--green-mark);
+  margin-bottom: 0.4rem;
+}
+
+.dice-result {
+  border-top: 2px solid var(--blood);
+  padding-top: 0.6rem;
+}
+
+.dice-result-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.dice-label {
+  font-family: var(--font-type);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.tally {
+  font-family: var(--font-type);
+  font-size: 0.78rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.3rem;
+}
+.tally.success {
+  background: rgba(47, 107, 58, 0.2);
+  color: var(--green-mark);
+  border: 1px solid var(--green-mark);
+}
+.tally.critical {
+  background: rgba(168, 32, 26, 0.2);
+  color: var(--blood);
+  border: 1px solid var(--blood);
+}
+
+.dice-faces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.die {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-family: var(--font-type);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  background: #efe7d4;
+  color: var(--ink-soft);
+}
+
+.die-success {
+  background: #cfe3d2;
+  color: var(--green-mark);
+  border-color: var(--green-mark);
+}
+
+.die-critical {
+  background: radial-gradient(circle at 35% 30%, var(--blood-bright), var(--blood));
+  color: #fff;
+  border-color: #3a0a08;
+  box-shadow: 0 0 7px rgba(168, 32, 26, 0.7);
+}
+
+/* ---------- RP tabs ---------- */
+
+.rp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rp-toolbar .spacer {
+  flex: 1;
+}
+
+.rp-title {
+  margin: 0;
+}
+.rp-char {
+  color: var(--blood-bright);
+}
+
+.rp-hint {
+  color: var(--paper-edge);
+}
+
+.rp-editor {
+  width: 100%;
+  font-family: var(--font-type);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 60vh;
+}
+
+.markdown-body {
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  border-bottom: 1px solid var(--paper-edge);
+  padding-bottom: 0.2rem;
+}
+
+.markdown-body code {
+  font-family: var(--font-type);
+  background: rgba(74, 61, 44, 0.15);
+  padding: 0.05rem 0.3rem;
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  background: #1c160f;
+  color: var(--paper);
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  overflow: auto;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid var(--paper-edge);
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+}
+
+.markdown-body th {
+  background: rgba(124, 22, 18, 0.12);
+}
+
+.markdown-body img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid var(--blood);
+  margin: 0.6rem 0;
+  padding-left: 0.8rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}

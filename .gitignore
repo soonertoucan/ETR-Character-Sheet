@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Copyrighted source material — do NOT republish the full rulebook in a public repo.
+# Keep these local. The distilled docs/RULES_SYNOPSIS.md is committed instead.
+docs/source/Eat-the-Reich-Rulebook.pdf
+docs/source/Rulebook-extracted-text.txt

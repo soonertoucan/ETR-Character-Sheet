@@ -1,0 +1,26 @@
+{
+  "name": "eat-the-reich-character-sheet",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Interactive character sheet for the TTRPG Eat the Reich. Offline-first, localStorage, GitHub Pages.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.2.0",
+    "vite": "^6.0.7"
+  }
+}

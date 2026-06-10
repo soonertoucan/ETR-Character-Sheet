@@ -1,0 +1,317 @@
+/* ============================================================
+   Eat the Reich — Character Sheet
+   Grungy pulp-horror theme: aged parchment, oxblood, iron.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=IM+Fell+English+SC&family=EB+Garamond:ital@0;1&display=swap');
+
+:root {
+  /* Palette */
+  --bg-0: #0c0a08;          /* near-black backdrop */
+  --bg-1: #15110d;          /* panel backing */
+  --paper: #cdbfa3;         /* aged parchment */
+  --paper-2: #b8a883;
+  --paper-edge: #8a7a5a;
+  --ink: #1c160f;           /* dark brown ink */
+  --ink-soft: #4a3d2c;
+  --blood: #7c1612;         /* oxblood */
+  --blood-bright: #a8201a;
+  --rust: #6e4a25;
+  --gold: #b98c3a;
+  --green-mark: #2f6b3a;    /* the green form-field accents from the sheet */
+  --danger: #8a1f1a;
+
+  --radius: 4px;
+  --shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+
+  --font-display: 'IM Fell English SC', 'Special Elite', serif;
+  --font-type: 'Special Elite', 'Courier New', monospace;
+  --font-body: 'EB Garamond', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(124, 22, 18, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 100%, rgba(110, 74, 37, 0.12), transparent 40%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.4em;
+  color: var(--paper);
+}
+
+a {
+  color: var(--gold);
+}
+
+button {
+  font-family: var(--font-type);
+  cursor: pointer;
+}
+
+/* ---------- Layout ---------- */
+
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(180deg, #1a1510, #100c08);
+  border-bottom: 2px solid var(--blood);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.topbar .brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--blood-bright);
+  text-shadow: 0 1px 0 #000;
+  white-space: nowrap;
+}
+
+.topbar .brand small {
+  display: block;
+  font-family: var(--font-type);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--paper-edge);
+}
+
+.topbar .spacer {
+  flex: 1;
+}
+
+.tabbar {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  background: #0e0b08;
+  border-bottom: 1px solid #2a2018;
+  position: sticky;
+  top: 56px;
+  z-index: 15;
+}
+
+.tabbar button {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--paper-edge);
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tabbar button:hover {
+  color: var(--paper);
+}
+
+.tabbar button.active {
+  color: var(--blood-bright);
+  border-bottom-color: var(--blood-bright);
+}
+
+.content {
+  flex: 1;
+  padding: 1.25rem;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------- Parchment panels ---------- */
+
+.panel {
+  background: linear-gradient(180deg, var(--paper), var(--paper-2));
+  color: var(--ink);
+  border: 1px solid var(--paper-edge);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow), inset 0 0 60px rgba(120, 92, 50, 0.25);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.1rem;
+}
+
+.panel > h2,
+.panel > h3 {
+  color: var(--ink);
+  font-family: var(--font-type);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  border-bottom: 2px solid var(--blood);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panel label {
+  font-family: var(--font-type);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* ---------- Inputs ---------- */
+
+input[type='text'],
+input[type='number'],
+textarea,
+select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: rgba(255, 252, 244, 0.55);
+  border: none;
+  border-bottom: 1.5px solid var(--ink-soft);
+  border-radius: 2px;
+  padding: 0.35rem 0.4rem;
+}
+
+textarea {
+  border: 1.5px solid var(--ink-soft);
+  border-radius: var(--radius);
+  resize: vertical;
+  min-height: 4rem;
+  line-height: 1.4;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  background: #fffdf6;
+  border-color: var(--blood);
+}
+
+select {
+  border: 1.5px solid var(--ink-soft);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(180deg, #2a201700, #00000022),
+    linear-gradient(180deg, var(--rust), #3c2814);
+  color: var(--paper);
+  border: 1px solid #000;
+  border-radius: var(--radius);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 0 #000, inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.05s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 #000;
+}
+
+.btn.blood {
+  background: linear-gradient(180deg, var(--blood-bright), var(--blood));
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--paper-edge);
+  border-color: #2a2018;
+  box-shadow: none;
+}
+
+.btn.small {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.68rem;
+}
+
+.btn.danger {
+  background: linear-gradient(180deg, #b0322b, var(--danger));
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  padding: 0.1rem 0.35rem;
+  line-height: 1;
+}
+.icon-btn:hover {
+  color: var(--blood);
+}
+
+/* ---------- Utility ---------- */
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.muted {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.hint {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 760px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
